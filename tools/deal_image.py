@@ -61,7 +61,7 @@ def init(args):
 	os_system("rm -rf " + tar_project)
 	os_system("mkdir " + tar_project)
 	# 拷贝到 workspace 
-	os_system("cp %s %s" % (item_project, tar_project))
+	os_system("cp -r %s %s" % (item_project, tar_project))
 	# 清理目录
 	os_system("rm -rf " + temp_project)
 
