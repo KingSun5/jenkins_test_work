@@ -32,7 +32,7 @@ def img_to_webp(res_path):
     				print fullpath, out_path
     				os.remove(fullpath)
 
-def init():
+def init(args):
 	global dst_path
 	global build_id
 	global temp_project
@@ -70,6 +70,6 @@ def main():
     args = init_option()
     print("System action: build start!!!! ")
     print(args)
-    init()
+    init(args)
 if __name__ == "__main__":
     main()
