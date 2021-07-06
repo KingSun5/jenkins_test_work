@@ -53,7 +53,7 @@ def init(args):
 	# 拷贝
 	res_project = os.path.join(sys.path[0],"..",RES,build_id) 
 	os_system("mkdir " + temp_project)
-	os_system("cp %s %s" % (res_project, item_project))
+	os_system("cp -r %s %s" % (res_project, item_project))
 	# 转格式
 	img_to_webp(item_project)
 	# 清理工作空间目录
