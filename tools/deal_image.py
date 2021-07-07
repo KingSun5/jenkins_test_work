@@ -46,22 +46,18 @@ def init(args):
 	temp_project = os.path.join(sys.path[0],"temp")
 	os_system("rm -rf " + temp_project)
 	os_system("mkdir " + temp_project)
-	# # 预处理文件夹
-	item_project = os.path.join(temp_project,build_id) 
-	os_system("rm -rf " + item_project)
-	os_system("mkdir " + item_project)
 	# 拷贝
 	res_project = os.path.join(sys.path[0],"..",RES,build_id) 
 	os_system("mkdir " + temp_project)
-	os_system("cp -r %s %s" % (res_project, item_project))
+	os_system("cp -r %s %s" % (res_project, temp_project))
 	# 转格式
-	img_to_webp(item_project)
+	img_to_webp(temp_project)
 	# 清理工作空间目录
 	tar_project = os.path.join(dst_path,build_id)
 	os_system("rm -rf " + tar_project)
-	os_system("mkdir " + tar_project)
+	item_project = os.path.join(temp_project,build_id)
 	# 拷贝到 workspace 
-	os_system("cp -r %s %s" % (item_project, tar_project))
+	os_system("cp -r %s %s" % (item_project, dst_path))
 	# 清理目录
 	os_system("rm -rf " + temp_project)
 
