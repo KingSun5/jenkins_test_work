@@ -25,10 +25,11 @@ def img_to_webp(res_path):
 	        if os.path.splitext(f)[1] == '.png' or os.path.splitext(f)[1] == '.jpg':
 	            fullpath = os.path.join(root, f)
 	            if os.path.isfile(fullpath):
-    				out_path = os.path.splitext(fullpath)[0] + '.webp'
+    				out_path = os.path.splitext(fullpath)[0] + '.png'
     				print out_path
     				im = Image.open(fullpath).convert("RGBA")
-    				im.save(out_path,"WEBP",lossless = False, quality = 80)
+    				# im.save(out_path,"WEBP",lossless = False, quality = 80)
+    				im.save(out_path)
     				print fullpath, out_path
     				os.remove(fullpath)
 
