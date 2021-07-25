@@ -29,7 +29,8 @@ def img_to_webp(res_path):
     				print out_path
     				im = Image.open(fullpath).convert("RGBA")
     				# im.save(out_path) 
-    				cwebp -q 80 fullpath -o out_path
+					os_system("cwebp -q %d %s -o %s" % (80,fullpath,out_path))
+					os_system("rm -rf " + temp_project)
     				print fullpath, out_path
     				os.remove(fullpath)
 
